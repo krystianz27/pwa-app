@@ -26,10 +26,17 @@
 function showPage(page) {
   document.querySelectorAll(".page").forEach((p) => (p.style.display = "none"));
   document.getElementById(page).style.display = "block";
+  if (page !== "map") {
+    hideMap()
+  }
+}
+
+function hideMap() {
+  document.getElementById("map").style.display = "none";
 }
 
 function getLocation() {
-  showPage("mapid")
+  // showPage("mapid")
   
   if (navigator.geolocation) {
     navigator.geolocation.getCurrentPosition((position) => {

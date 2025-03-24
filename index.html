@@ -10,15 +10,21 @@
     />
     <link rel="stylesheet" href="style.css" />
     <link rel="manifest" href="manifest.json" />
-    <script src="https://unpkg.com/leaflet/dist/leaflet.js"></script>
+    <link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css"
+    integrity="sha256-p4NxAoJBhIIN+hmNHrzRCf9tD/miZyoHS5obTRR9BMY="
+    crossorigin=""/>
+    <!-- <script src="https://unpkg.com/leaflet/dist/leaflet.js"></script> -->
+    <script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js"
+    integrity="sha256-20nQCchB9co0qIjJZRGuk2/Z9VM+kNiyxNV1lvTlZBo="
+    crossorigin=""></script>
     <script>
       if ("serviceWorker" in navigator) {
         navigator.serviceWorker.register("sw.js");
       }
     </script>
   </head>
-  <body class="container py-4">
-    <nav class="nav nav-pills">
+  <body class="container fluid py-4">
+    <nav class="nav nav-pills d-flex flex-column flex-md-row">
       <a class="nav-link active" href="#" onclick="showPage('home')"
         >Strona główna</a
       >
@@ -26,17 +32,19 @@
       <a class="nav-link" href="#" onclick="showPage('sos')">SOS</a>
     </nav>
 
-    <div id="home" class="page">
+    <div id="home" class="page tex-center">
       <h1>Strona Główna</h1>
-      <p>Autorzy: Krystian Zdziebko, Patryk Ficek, Krystian Gruszecki</p>
+      <p>Autorzy: Krystian Zdziebko, Patryk Ficek</p>
     </div>
 
-    <div id="map" class="page" style="display: none">
+    <!-- <div id="map" class="page" style="display: none"> -->
+    <div id="map" class="w-auto" style="display: none">
       <h1>Mapa</h1>
       <button class="btn btn-primary" onclick="getLocation()">
         Pobierz lokalizację
       </button>
-      <div id="mapid" style="height: 400px"></div>
+      <!-- <div id="mapid" style="height: 100vh;"></div> -->
+      <div id="mapid" style="display: none" class="leaflet-container leaflet-touch leaflet-fade-anim leaflet-grab leaflet-touch-drag leaflet-touch-zoom"></div>
     </div>
 
     <div id="sos" class="page" style="display: none">

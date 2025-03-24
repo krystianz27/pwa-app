@@ -1,0 +1,10 @@
+body {
+  font-family: Arial, sans-serif;
+}
+.page {
+  margin-top: 20px;
+}
+#mapid {
+  height: 400px;
+  margin-top: 10px;
+}

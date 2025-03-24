@@ -1,3 +1,28 @@
+// let installPromptEvent;
+
+// window.addEventListener("beforeinstallprompt", (event) => {
+//   event.preventDefault();
+//   installPromptEvent = event;
+
+//   let installButton = document.createElement("button");
+//   installButton.textContent = "Zainstaluj aplikację";
+//   installButton.className = "btn btn-success";
+//   installButton.style.display = "block";
+//   installButton.onclick = () => {
+//     installPromptEvent.prompt();
+//     installPromptEvent.userChoice.then((choiceResult) => {
+//       if (choiceResult.outcome === "accepted") {
+//         console.log("Użytkownik zaakceptował instalację");
+//       } else {
+//         console.log("Użytkownik anulował instalację");
+//       }
+//       installPromptEvent = null;
+//     });
+//   };
+
+//   document.body.appendChild(installButton);
+// });
+
 function showPage(page) {
   document.querySelectorAll(".page").forEach((p) => (p.style.display = "none"));
   document.getElementById(page).style.display = "block";
